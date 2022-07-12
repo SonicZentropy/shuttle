@@ -10,9 +10,8 @@ members = [
 ]
 exclude = [
   "e2e",
-  "vendor",
   "examples"
 ]
 
-#[patch.crates-io]
-#cargo = { path = "./vendor/cargo-0.63.1" }
+[patch.crates-io]
+cargo = { git = "https://github.com/SonicZentropy/cargo.git" }
