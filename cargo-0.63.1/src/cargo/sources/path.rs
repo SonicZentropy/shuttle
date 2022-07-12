@@ -289,9 +289,9 @@ impl<'cfg> PathSource<'cfg> {
 
             //without canonicalization, Windows paths do not match pkg_path ever due to \\?\ prefix
             #[cfg(target_os = "windows")]
-            let file_path = file_path.canonicalize()?;
+                let file_path = file_path.canonicalize()?;
 
-            if skip_paths.contains(&*file_path) {
+            if skip_paths.contains(&file_path) {
                 continue;
             }
 
@@ -353,7 +353,7 @@ impl<'cfg> PathSource<'cfg> {
                 assert!(!is_dir);
                 // We found a file!
                 warn!("  found {}", file_path.display());
-                ret.push(file_path.to_path_buf());
+                ret.push(file_path);
             }
         }
         return Ok(ret);

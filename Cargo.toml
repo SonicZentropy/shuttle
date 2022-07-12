@@ -10,9 +10,9 @@ members = [
 ]
 exclude = [
   "e2e",
-  "examples",
-  "cargo-0.63.1"
+  "cargo-0.63.1",
+  "examples"
 ]
 
-[patch.crates-io]
-cargo = { path = "./cargo-0.63.1" }
+#[patch.crates-io]
+#cargo = { path = "./cargo-0.63.1" }
